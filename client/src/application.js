@@ -50,6 +50,7 @@ class Application extends Component {
     // Add new messages to the message list
     messages.on('created', message => {
       let newList = this.state.messages.concat(message)
+      debugger
       this.setState({
       messages: newList
       })
