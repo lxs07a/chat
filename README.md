@@ -14,11 +14,13 @@ On the back end Node.js is used for this real-time communication and collaborati
 <br><br>
 The Feathers micro-service web framework is selected as a scalable REST and realtime API layer for its implementation of services and hooks used in authentication, authorization, and processing of messages. 
 <br><br>
+Socket.io is used to enable realtime, bi-directional communication between the web client and server due to its speed and reliability.
+<br><br>
 JWT (JSON Web Token) was chosen for authentication as a compact and self-contained way for securely transmitting information.
 <br><br>
 The npm package NeDB was chosen as a lightweight version of a database (JavaScript + MongoDB API) to persist messages without the need to install a complete database solution.
 <br><br>
-On the front end, React was selected for user interface due to its speed and scalability. 
+On the front end, React was selected for user interface due to its speed and scalability. Bootstrapped with 'create-react-app' npm package.
 
 <br><br>
 Style decisions:<br>

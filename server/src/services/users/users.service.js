@@ -12,10 +12,10 @@ module.exports = function (app) {
     paginate
   };
 
-  // Initialize our service with any options it requires
+  // Initializes the service with any options it requires
   app.use('/users', createService(options));
 
-  // Get our initialized service so that we can register hooks
+  // Get initialized service so that hooks can be registered
   const service = app.service('users');
 
   service.hooks(hooks);

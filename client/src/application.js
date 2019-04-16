@@ -31,7 +31,7 @@ class Application extends Component {
         }),
         users.find()
       ]).then( ([ messagePage, userPage ]) => {
-        // We want the latest messages but in the reversed order
+        // Show the latest messages in the reversed order
         const messages = messagePage.data.reverse();
         const users = userPage.data;
 
@@ -40,7 +40,7 @@ class Application extends Component {
       });
     });
 
-    // On logout reset all all local state (which will then show the login screen)
+    // On logout reset all local state (which will then show the login screen)
     client.on('logout', () => this.setState({
       login: null,
       messages: null,
@@ -48,9 +48,13 @@ class Application extends Component {
     }));
 
     // Add new messages to the message list
-    messages.on('created', message => this.setState({
-      messages: this.state.messages.concat(message)
-    }));
+    messages.on('created', message => {
+      let newList = this.state.messages.concat(message)
+      this.setState({
+      messages: newList
+      })
+    });
+
 
     // Add new users to the user list
     users.on('created', user => this.setState({
